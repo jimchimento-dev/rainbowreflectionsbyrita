@@ -5,6 +5,7 @@ const { MONGOURI } = require('./config');
 const productRouter = require('./routes/productRouter');
 const eventRouter = require('./routes/eventRouter');
 const serviceRouter = require('./routes/serviceRouter');
+const userRouter = require('./routes/users');
 
 const port = process.env.PORT || 5000;
 
@@ -25,7 +26,7 @@ app.use(express.json());
 app.use('/shop', productRouter);
 app.use('/events', eventRouter);
 app.use('/services', serviceRouter);
-// app.use('/user', users);
+app.use('/user', userRouter);
 
 
 app.listen(port, () => {
