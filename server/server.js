@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const { MONGOURI } = require('./config');
+const productRouter = require('./routes/productRouter');
+const eventRouter = require('./routes/eventRouter');
+const serviceRouter = require('./routes/serviceRouter');
 
 const port = process.env.PORT || 5000;
 
@@ -17,6 +20,13 @@ mongoose.connection.on('connected', () => {
 mongoose.connection.on('error', () => {
     console.log('Error connecting to MongoDB')
 })
+
+app.use(express.json());
+app.use('/shop', productRouter);
+app.use('/events', eventRouter);
+app.use('/services', serviceRouter);
+// app.use('/user', users);
+
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

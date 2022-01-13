@@ -13,8 +13,15 @@ const serviceSchema = new Schema({
     },
     cost: {
         type: Number,
-        required: true
+        required: true,
+        min: 50,
+        max: 90
     },
+    time: {
+        type: Number,
+        min: 30,
+        max: 60
+    }
 });
 
 const Service = mongoose.model('Service', serviceSchema);
