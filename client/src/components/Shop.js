@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid } from '@mui/material';
 
 class Shop extends Component {
     constructor(props) {
@@ -34,7 +28,7 @@ class Shop extends Component {
         if (!items.length) return null;
 
         return items.map((item, index) => (
-            <Grid item xs={12} sm={4} md={3} key={index}>
+            <Grid item xs={12} sm={6} md={3} key={index}>
                 <Card sx={{ maxWidth: 345 }} variant="outlined">
                     <CardMedia
                         component="img"

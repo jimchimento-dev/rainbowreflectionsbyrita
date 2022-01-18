@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Events from './components/Events';
 import Services from './components/Services';
 import Shop from './components/Shop';
+import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <CssBaseline />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
