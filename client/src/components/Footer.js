@@ -75,7 +75,7 @@ const Footer = () => {
                 </Box>
             </Container>
             <div style={{ textAlign: 'center', marginTop: '15px' }}>
-                Copyright © 2021 Rainbow Reflections by Rita - All Rights Reserved.
+                Copyright © 2022 Rainbow Reflections by Rita - All Rights Reserved.
                             </div>
         </footer>
     )
