@@ -31,7 +31,7 @@ const Home = () => {
                     </Stack>
                 </Box>
             </Box>
-            <Grid container sx={{ textAlign: 'center', marginTop: '40px' }}>
+            <Grid container className="row-content" sx={{ textAlign: 'center', marginTop: '40px' }}>
                 <Grid item sm={4}>
                     <img src="/assets/images/Inspirational Gifts.jpeg" style={{ borderRadius: '50%' }} />
                 </Grid>
@@ -40,10 +40,10 @@ const Home = () => {
                     <Typography variant="h5">Surround yourself with positivity, view our uplifting gift items today!</Typography>
                 </Grid>
                 <Grid item sm={4}>
-                    <Typography variant="h2" sx={{ textAlign: 'center' }}>Inspirational Gifts</Typography>
+                    <Typography variant="h2">Inspirational Gifts</Typography>
                 </Grid >
             </Grid>
-            <Grid container sx={{ textAlign: 'center', marginTop: '20px' }}>
+            <Grid container className="row-content" sx={{ textAlign: 'center', marginTop: '20px' }}>
                 <Grid item sm={4}>
                     <Typography variant="h2">Gemstones &amp; Crystals</Typography>
                 </Grid >
@@ -55,7 +55,7 @@ const Home = () => {
                     <img src="/assets/images/Gemstones and Crystals.jpeg" style={{ borderRadius: '50%' }} />
                 </Grid>
             </Grid>
-            <Grid container sx={{ textAlign: 'center', marginTop: '20px' }}>
+            <Grid container className="row-content" sx={{ textAlign: 'center', marginTop: '20px' }}>
                 <Grid item sm={4}>
                     <img src="/assets/images/Mind Body Spirit.jpeg" style={{ borderRadius: '50%' }} />
                 </Grid>
