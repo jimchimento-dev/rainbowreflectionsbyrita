@@ -28,7 +28,7 @@ class Shop extends Component {
         if (!items.length) return null;
 
         return items.map((item, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Grid item xs={12} sm={6} md={3} key={index} mt={3}>
                 <Card sx={{ maxWidth: 345 }} variant="outlined">
                     <CardMedia
                         component="img"
@@ -56,6 +56,10 @@ class Shop extends Component {
     render() {
         return (
             <Grid container>
+                <Grid item xs={12} sx={{ textAlign: 'center' }}>
+                    <Typography variant="h2">Shop</Typography>
+                    <hr />
+                </Grid>
                 {this.displayShopItems(this.state.shopItems)}
             </Grid>
         );

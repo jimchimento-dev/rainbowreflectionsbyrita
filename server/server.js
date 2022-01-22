@@ -6,6 +6,7 @@ const productRouter = require('./routes/productRouter');
 const eventRouter = require('./routes/eventRouter');
 const serviceRouter = require('./routes/serviceRouter');
 const userRouter = require('./routes/users');
+const cors = require('cors');
 
 const port = process.env.PORT || 5000;
 
@@ -22,6 +23,7 @@ mongoose.connection.on('error', () => {
     console.log('Error connecting to MongoDB')
 })
 
+app.use(cors());
 app.use(express.json());
 app.use('/shop', productRouter);
 app.use('/events', eventRouter);
