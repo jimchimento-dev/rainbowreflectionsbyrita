@@ -5,6 +5,7 @@ const { MONGOURI } = require('./config');
 const productRouter = require('./routes/productRouter');
 const eventRouter = require('./routes/eventRouter');
 const serviceRouter = require('./routes/serviceRouter');
+const contactRouter = require('./routes/contactRouter')
 const userRouter = require('./routes/users');
 const cors = require('cors');
 
@@ -29,6 +30,7 @@ app.use('/shop', productRouter);
 app.use('/events', eventRouter);
 app.use('/services', serviceRouter);
 app.use('/user', userRouter);
+app.use('/contact', contactRouter);
 
 
 app.listen(port, () => {

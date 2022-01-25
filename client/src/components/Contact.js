@@ -4,6 +4,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import ContactForm from './ContactForm';
 
 const Contact = () => {
+
     return (
         <>
             <Grid container>
@@ -32,6 +33,14 @@ const Contact = () => {
                     <ContactForm />
                 </CardContent>
             </Card>
+            <Grid container className="row-content">
+                <Grid item xs={12}>
+                    <iframe width="100%" height="500" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=75%20NJ-15%20building%20i-5,%20Lafayette,%20NJ%2007848&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" /><a
+                        href="https://www.zipcodewiki.net/united-states/" />
+                </Grid>
+            </Grid>
         </>
     )
 }
