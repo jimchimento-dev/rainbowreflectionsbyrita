@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
+import { Grid, TextField, Button } from '@mui/material';
 import axios from 'axios';
 
 const ContactForm = () => {
@@ -20,7 +20,7 @@ const ContactForm = () => {
                 ...prevInput,
                 [name]: value
             }
-        })
+        });
     }
 
     const handleSubmit = e => {
@@ -32,7 +32,15 @@ const ContactForm = () => {
             number: input.number,
             message: input.message
         }
+
         axios.post('http://localhost:5000/contact', newRequest);
+        setInput({
+            firstName: '',
+            lastName: '',
+            email: '',
+            number: '',
+            message: ''
+        });
     }
 
     return (
