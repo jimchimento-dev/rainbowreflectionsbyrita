@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import About from './components/About';
-import Contact from './components/Contact';
+import Contact from './components/Contact/ContactComponent';
 import Events from './components/Events';
 import Services from './components/Services';
 import Shop from './components/Shop';

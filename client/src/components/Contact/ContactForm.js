@@ -1,47 +1,12 @@
-import React, { useState } from 'react';
-import { Grid, TextField, Button } from '@mui/material';
-import axios from 'axios';
+import React from 'react';
+import { Grid, TextField, Button, Typography } from '@mui/material';
+import useForm from './useForm';
 
-const ContactForm = () => {
+const ContactForm = ({ submitForm }) => {
 
-    const [input, setInput] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        number: '',
-        message: ''
-    });
-
-    const handleChange = e => {
-        const { name, value } = e.target;
-
-        setInput(prevInput => {
-            return {
-                ...prevInput,
-                [name]: value
-            }
-        });
-    }
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        const newRequest = {
-            firstName: input.firstName,
-            lastName: input.lastName,
-            email: input.email,
-            number: input.number,
-            message: input.message
-        }
-
-        axios.post('http://localhost:5000/contact', newRequest);
-        setInput({
-            firstName: '',
-            lastName: '',
-            email: '',
-            number: '',
-            message: ''
-        });
-    }
+    const { handleChange, handleSubmit, input, errors } = useForm(
+        submitForm
+    );
 
     return (
         <form>
@@ -57,6 +22,7 @@ const ContactForm = () => {
                         required
                         fullWidth
                     />
+                    {errors.firstName && <Typography sx={{ color: 'red' }} variant="p">{errors.firstName}</Typography>}
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     <TextField
@@ -69,6 +35,7 @@ const ContactForm = () => {
                         required
                         fullWidth
                     />
+                    {errors.lastName && <Typography sx={{ color: 'red' }} variant="p">{errors.lastName}</Typography>}
                 </Grid>
                 <Grid item xs={12}>
                     <TextField
@@ -82,6 +49,7 @@ const ContactForm = () => {
                         fullWidth
                         value={input.email}
                     />
+                    {errors.email && <Typography sx={{ color: 'red' }} variant="p">{errors.email}</Typography>}
                 </Grid>
                 <Grid item xs={12}>
                     <TextField
@@ -93,6 +61,7 @@ const ContactForm = () => {
                         required
                         fullWidth
                     />
+                    {errors.number && <Typography sx={{ color: 'red' }} variant="p">{errors.number}</Typography>}
                 </Grid>
                 <Grid item xs={12}>
                     <TextField
@@ -107,6 +76,7 @@ const ContactForm = () => {
                         required
                         fullWidth
                     />
+                    {errors.message && <Typography sx={{ color: 'red' }} variant="p">{errors.message}</Typography>}
                 </Grid>
                 <Grid item xs={12}>
                     <Button type="button" variant="contained" color="primary" onClick={handleSubmit}>Send Message</Button>

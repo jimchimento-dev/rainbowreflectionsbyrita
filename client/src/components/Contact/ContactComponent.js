@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grid, Typography, Button, Card, CardContent } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import ContactForm from './ContactForm';
+import ContactFormSuccess from './ContactFormSuccess';
 
 const Contact = () => {
+
+    const [formIsSubmitted, setFormIsSubmitted] = useState(false);
+
+    const submitForm = () => {
+        setFormIsSubmitted(true);
+    }
 
     return (
         <>
@@ -30,7 +37,7 @@ const Contact = () => {
             </Grid>
             <Card sx={{ display: 'flex', justifyContent: 'center' }}>
                 <CardContent>
-                    <ContactForm />
+                    {!formIsSubmitted ? <ContactForm submitForm={submitForm} /> : <ContactFormSuccess />}
                 </CardContent>
             </Card>
             <Grid container className="row-content">
