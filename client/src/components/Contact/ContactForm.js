@@ -78,7 +78,7 @@ const ContactForm = ({ submitForm }) => {
                     />
                     {errors.message && <Typography sx={{ color: 'red' }} variant="p">{errors.message}</Typography>}
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} sx={{ display: "flex", justifyContent: 'flex-end' }}>
                     <Button type="button" variant="contained" color="primary" onClick={handleSubmit}>Send Message</Button>
                 </Grid>
             </Grid>

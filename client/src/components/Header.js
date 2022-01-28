@@ -47,7 +47,9 @@ const Header = () => {
 
                                     <Button sx={{ marginLeft: 'auto' }} variant="contained">Login</Button>
                                     <IconButton sx={{ marginLeft: '15px', color: "white" }}>
-                                        <ShoppingCartIcon />
+                                        <Link to="/cart">
+                                            <ShoppingCartIcon sx={{ color: 'white' }} />
+                                        </Link>
                                     </IconButton>
                                 </>
                             )

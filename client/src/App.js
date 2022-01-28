@@ -8,6 +8,7 @@ import Contact from './components/Contact/ContactComponent';
 import Events from './components/Events';
 import Services from './components/Services';
 import Shop from './components/Shop';
+import Cart from './components/Cart';
 import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/services" element={<Services />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </div>
