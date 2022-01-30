@@ -7,8 +7,8 @@ import About from './components/About';
 import Contact from './components/Contact/ContactComponent';
 import Events from './components/Events';
 import Services from './components/Services';
-import Shop from './components/Shop';
-import Cart from './components/Cart';
+import Shop from './components/Shop/Shop';
+import Cart from './components/Shop/Cart';
 import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 
