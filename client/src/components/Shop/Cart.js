@@ -12,15 +12,6 @@ const Cart = () => {
         setCartItems([...cartItems, item]);
     }
 
-
-    // const [shopItems] = useShopData();
-    // const [cartItems, setCartItems] = useState([]);
-
-
-    // export const addToCart = item => {
-    //     setCartItems([...cartItems, item])
-    // }
-
     // const displayCart = cartItems.map(item => (
     //     <Typography key={item.id}>
     //         <Typography>{item.itemName}</Typography>
@@ -29,14 +20,12 @@ const Cart = () => {
     //     </Typography>
     // ))
 
-    // const removeFromCart = item => {
-    //     let copyCart = [...cartItems];
+    const removeFromCart = item => {
+        let copyCart = [...cartItems];
 
-    //     copyCart = copyCart.filter(cartItem => cartItem.id !== item.id);
-    //     setCartItems(copyCart);
-    // }
-
-
+        copyCart = copyCart.filter(cartItem => cartItem.id !== item.id);
+        setCartItems(copyCart);
+    }
 
     return (
         <Grid container>

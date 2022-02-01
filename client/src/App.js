@@ -8,6 +8,8 @@ import Contact from './components/Contact/ContactComponent';
 import Events from './components/Events';
 import Services from './components/Services';
 import Shop from './components/Shop/Shop';
+import Login from './components/Login/Login';
+import Register from './components/Login/Register';
 import Cart from './components/Shop/Cart';
 import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
@@ -26,6 +28,8 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/services" element={<Services />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />

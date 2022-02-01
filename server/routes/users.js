@@ -32,4 +32,8 @@ userRouter.post('/register', (req, res) => {
         })
 })
 
+userRouter.post('signin', (req, res) => {
+
+});
+
 module.exports = userRouter;

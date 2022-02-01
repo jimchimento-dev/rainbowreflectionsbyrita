@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography, Button, Stack, Grid } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -26,8 +27,8 @@ const Home = () => {
                     <Typography variant="h2" sx={{ fontFamily: "cursive", fontWeight: "bold", color: "white", marginTop: "50px" }}>Explore Your Inner Self...</Typography>
                     <Typography variant="h3" sx={{ fontFamily: "cursive", fontWeight: "bold", color: "white", marginTop: "25px" }}>Welcome to Rainbow Reflections by Rita</Typography>
                     <Stack direction="row" spacing={4} mt={10} >
-                        <Button variant="contained" sx={{ px: '30px', borderRadius: "15px" }}>Book A Reading</Button>
-                        <Button variant="contained" sx={{ px: '30px', borderRadius: "15px" }}>Shop Now</Button>
+                        <Button variant="contained" sx={{ px: '55px', borderRadius: "15px" }}>Book A Reading</Button>
+                        <Link to="/shop" style={{ textDecoration: 'none' }}><Button variant="contained" sx={{ px: '55px', borderRadius: "15px" }}>Shop Now</Button></Link>
                     </Stack>
                 </Box>
             </Box>
