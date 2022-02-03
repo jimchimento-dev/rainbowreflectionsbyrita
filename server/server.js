@@ -1,17 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const { MONGOURI } = require('./config');
 const productRouter = require('./routes/productRouter');
 const eventRouter = require('./routes/eventRouter');
 const serviceRouter = require('./routes/serviceRouter');
 const contactRouter = require('./routes/contactRouter')
 const userRouter = require('./routes/users');
+const authRouter = require('./routes/auth');
 const cors = require('cors');
+const config = require('config');
 
 const port = process.env.PORT || 5000;
 
-mongoose.connect(process.env.MONGODB_URI || MONGOURI, {
+const db = config.get('mongoURI')
+
+mongoose.connect(db, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 });
@@ -31,6 +34,7 @@ app.use('/events', eventRouter);
 app.use('/services', serviceRouter);
 app.use('/user', userRouter);
 app.use('/contact', contactRouter);
+app.use('/auth', authRouter)
 // app.use('/cart', cartRouter);
 
 
