@@ -1,13 +1,43 @@
-import React from 'react';
-import { Grid, Typography, Paper, Avatar, TextField, FormControlLabel, Checkbox, Button } from '@mui/material';
+import React, { useState } from 'react';
+import { Grid, Typography, Paper, Avatar, TextField, FormControlLabel, Checkbox } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
+import SendIcon from '@mui/icons-material/Send';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
 
-    const isSignup = false;
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const handleSubmit = () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
+        try {
+            const config = {
+                headers: {
+                    "Content-type": "application/json"
+                }
+            }
+
+            setLoading(true);
+
+            const { data } = await axios.post('http://localhost:5000/login',
+                {
+                    email,
+                    password
+                },
+                config);
+
+            console.log(data);
+            localStorage.setItem('userInfo', JSON.stringify(data));
+
+            setLoading(false)
+        } catch (error) {
+            setError(error.response.data.message)
+        }
     }
 
     return (
@@ -18,10 +48,36 @@ const Login = () => {
                         <Avatar src="/assets/images/Butterfly_nav_image-removebg-preview (1).png" sx={{ width: 50, height: 50 }} />
                         <Typography variant="h5">Welcome! Please sign in below.</Typography>
                     </Grid>
-                    <TextField label="Email" placeholder="Email" sx={{ marginTop: 5 }} fullWidth required />
-                    <TextField label="Password" placeholder="Password" type="password" sx={{ marginTop: 2 }} fullWidth required />
+                    <TextField
+                        label="Email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        sx={{ marginTop: 5 }}
+                        fullWidth
+                        required
+                    />
+                    <TextField
+                        label="Password"
+                        placeholder="Password"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        sx={{ marginTop: 2 }}
+                        fullWidth
+                        required />
                     <FormControlLabel sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: 2 }} label="Remember Me" control={<Checkbox color="primary" />} />
-                    <Button type="submit" color="primary" variant="contained" sx={{ margin: '8px 0' }} fullWidth onSubmit={handleSubmit}>Sign In</Button>
+                    <LoadingButton
+                        endIcon={<SendIcon />}
+                        loadingPosition="end"
+                        type="submit"
+                        color="primary"
+                        variant="contained"
+                        sx={{ margin: '8px 0' }}
+                        fullWidth
+                        onClick={handleSubmit}>
+                        Sign In
+                         </LoadingButton>
                     <Typography variant="h6" align="center" sx={{ margin: '15px 0' }}>New user? <Link to="/register">Register here</Link></Typography>
                 </Paper>
             </Grid>

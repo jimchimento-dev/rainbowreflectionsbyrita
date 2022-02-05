@@ -32,9 +32,9 @@ app.use(express.json());
 app.use('/shop', productRouter);
 app.use('/events', eventRouter);
 app.use('/services', serviceRouter);
-app.use('/user', userRouter);
+app.use('/register', userRouter);
 app.use('/contact', contactRouter);
-app.use('/auth', authRouter)
+app.use('/login', authRouter)
 // app.use('/cart', cartRouter);
 
 

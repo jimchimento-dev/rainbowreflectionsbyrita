@@ -7,7 +7,7 @@ const auth = require('../middleware/auth');
 
 const userRouter = express.Router();
 
-userRouter.get('/register', (req, res) => {
+userRouter.get('/', (req, res) => {
     User.find()
         .then(user => {
             res.statusCode = 200;
@@ -17,7 +17,7 @@ userRouter.get('/register', (req, res) => {
         .catch(err => next(err));
 });
 
-userRouter.post('/register', (req, res) => {
+userRouter.post('/', (req, res) => {
     const { firstName, lastName, email, password } = req.body;
 
     if (!firstName || !lastName || !email || !password) {
