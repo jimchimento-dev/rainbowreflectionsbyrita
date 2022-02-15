@@ -1,21 +1,31 @@
-import React, { useState } from 'react';
-import { AppBar, Typography, Toolbar, Tab, Tabs, Button, IconButton, useMediaQuery, useTheme } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { AppBar, Toolbar, Tab, Tabs, Button, IconButton, useMediaQuery, useTheme } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import NavDrawer from './NavDrawer';
 import { Link } from 'react-router-dom';
-import Login from './Login/Login';
-
-// const OpenLogin = props => {
-//     const { onClose, open } = props;
-
-//     return (
-//         <Login />
-//     )
-// }
 
 const Header = () => {
 
     const [value, setValue] = useState();
+    const [isLogged, setisLogged] = useState(false);
+
+    useEffect(() => {
+        checkStorage();
+        return () => { };
+    }, [isLogged]);
+
+    const checkStorage = () => {
+        if (localStorage.getItem("userInfo")) {
+            setisLogged(true);
+        } else {
+            setisLogged(false);
+        }
+    }
+
+    const logout = () => {
+        localStorage.removeItem("userInfo");
+        setisLogged(false);
+    }
 
     const theme = useTheme();
     console.log(theme);
@@ -25,16 +35,6 @@ const Header = () => {
     const imageHomeIndicator = (value) => {
         value = 0;
         setValue(value);
-    }
-
-    const [open, setOpen] = useState(false);
-
-    const handleOpen = () => {
-        setOpen(true);
-    }
-
-    const handleClose = () => {
-        setOpen(false);
     }
 
     return (
@@ -68,7 +68,11 @@ const Header = () => {
                                         <Tab label="Shop" component={Link} to="/shop" />
                                     </Tabs>
                                     <Link to="/login" style={{ textDecoration: 'none' }}>
-                                        <Button sx={{ marginLeft: 'auto' }} variant="contained" onClick={handleOpen}>Login</Button>
+                                        {!isLogged ? (
+                                            <Button sx={{ marginLeft: 'auto' }} color="secondary" variant="contained">Login</Button>
+                                        ) : (
+                                                <Button sx={{ marginLeft: 'auto' }} color="error" onClick={logout} variant="contained">Logout</Button>
+                                            )}
                                     </Link>
                                     <IconButton sx={{ marginLeft: '15px', color: "white" }}>
                                         <Link to="/cart">

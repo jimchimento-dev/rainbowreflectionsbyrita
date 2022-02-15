@@ -14,7 +14,6 @@ import Cart from './components/Shop/Cart';
 import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 
-
 function App() {
   return (
     <BrowserRouter>

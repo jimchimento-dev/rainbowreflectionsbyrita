@@ -43,6 +43,7 @@ const Login = () => {
 
             localStorage.setItem('userInfo', JSON.stringify(data));
             setLoading(false);
+            window.location.reload();
         } catch (error) {
             setError(error.response.data.msg);
             setLoading(false);

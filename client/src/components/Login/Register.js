@@ -20,7 +20,7 @@ const Register = () => {
         const userInfo = localStorage.getItem("userInfo");
 
         if (userInfo) {
-            navigate("/login");
+            navigate("/");
         }
     }, [navigate]);
 
@@ -45,6 +45,7 @@ const Register = () => {
                 config);
             localStorage.setItem('userInfo', JSON.stringify(data));
             setLoading(false);
+            window.location.reload();
         } catch (error) {
             setError(error.response.data.msg);
             setLoading(false);
