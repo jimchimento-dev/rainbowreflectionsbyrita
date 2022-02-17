@@ -18,5 +18,9 @@ body {
 }
 
 ul {
-  list-style: none
+  list-style: none;
+}
+
+hr {
+  width: 80vw;
 }

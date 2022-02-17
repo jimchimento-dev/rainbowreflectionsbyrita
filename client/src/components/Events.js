@@ -55,8 +55,8 @@ class Events extends Component {
     render() {
         return (
             <Grid container>
-                <Grid item xs={12} sx={{ textAlign: 'center' }}>
-                    <Typography variant="h2">Upcoming Events</Typography>
+                <Grid item xs={12}>
+                    <Typography variant="h4" ml={25} mt={5}>Upcoming Events</Typography>
                     <hr />
                 </Grid>
                 {this.displayEvents(this.state.events)}

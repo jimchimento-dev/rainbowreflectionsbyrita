@@ -5,8 +5,8 @@ const About = () => {
     return (
         <>
             <Grid container>
-                <Grid item xs={12} sx={{ textAlign: 'center' }}>
-                    <Typography variant="h2">About Us</Typography>
+                <Grid item xs={12}>
+                    <Typography variant="h4" ml={25} mt={5}>About Us</Typography>
                     <hr />
                 </Grid>
             </Grid>

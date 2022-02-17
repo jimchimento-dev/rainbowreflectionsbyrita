@@ -7,15 +7,25 @@ const Shop = () => {
 
     const [shopItems] = useShopData();
 
+    const addToCart = () => {
+
+    }
+
     return (
         <>
             <Grid container>
-                <Grid item xs={12} sx={{ textAlign: 'center' }}>
-                    <Typography variant="h2">Shop</Typography>
+                <Grid item xs={12}>
+                    <Typography variant="h4" ml={25} mt={5}>Shop</Typography>
                     <hr />
                 </Grid>
                 {shopItems.map((item, index) =>
-                    <Grid item xs={12} sm={6} md={3} key={index} mt={3}>
+                    <Grid
+                        item
+                        xs={12}
+                        sm={6}
+                        md={3}
+                        key={index}
+                        mt={3}>
                         <Card sx={{ maxWidth: 345, height: '100%' }} variant="outlined">
                             <CardMedia
                                 component="img"
@@ -32,13 +42,18 @@ const Shop = () => {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button sx={{ marginLeft: 'auto', marginBottom: '15px', marginRight: '15px', height: '100%' }} variant="contained" size="small">Add to Cart</Button>
+                                <Button
+                                    sx={{ marginLeft: 'auto', marginBottom: '15px', marginRight: '15px', height: '100%' }}
+                                    variant="contained"
+                                    size="small "
+                                    onClick={addToCart}
+                                >Add to Cart</Button>
                             </CardActions>
                         </Card>
                     </Grid>)}
-                <Link to="/cart">
-                    {/* <Button variant="outlined">Go to cart ({cartItems.length})</Button> */}
-                </Link>
+                {/* <Link to="/cart">
+                    <Button variant="outlined">Go to cart</Button>
+                </Link> */}
             </Grid>
         </>
     )

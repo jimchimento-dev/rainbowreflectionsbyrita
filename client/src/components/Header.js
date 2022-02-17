@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AppBar, Toolbar, Tab, Tabs, Button, IconButton, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Toolbar, Tab, Tabs, Button, IconButton, useMediaQuery, useTheme, Badge } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import NavDrawer from './NavDrawer';
 import { Link } from 'react-router-dom';
@@ -76,7 +76,9 @@ const Header = () => {
                                     </Link>
                                     <IconButton sx={{ marginLeft: '15px', color: "white" }}>
                                         <Link to="/cart">
-                                            <ShoppingCartIcon sx={{ color: 'white' }} />
+                                            <Badge badgeContent={0} color="primary">
+                                                <ShoppingCartIcon sx={{ color: 'white' }} />
+                                            </Badge>
                                         </Link>
                                     </IconButton>
                                 </>

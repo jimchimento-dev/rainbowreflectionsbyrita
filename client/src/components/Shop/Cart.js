@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography, Grid, Button } from '@mui/material';
+import { Typography, Grid } from '@mui/material';
 import useShopData from './useShopData';
 
 const Cart = () => {

@@ -4,7 +4,8 @@ const app = express();
 const productRouter = require('./routes/productRouter');
 const eventRouter = require('./routes/eventRouter');
 const serviceRouter = require('./routes/serviceRouter');
-const contactRouter = require('./routes/contactRouter')
+const contactRouter = require('./routes/contactRouter');
+const cartRouter = require('./routes/cartRouter');
 const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const cors = require('cors');
@@ -35,7 +36,7 @@ app.use('/services', serviceRouter);
 app.use('/register', userRouter);
 app.use('/contact', contactRouter);
 app.use('/login', authRouter)
-// app.use('/cart', cartRouter);
+app.use('/cart', cartRouter);
 
 
 app.listen(port, () => {

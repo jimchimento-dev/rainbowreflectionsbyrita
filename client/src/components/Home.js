@@ -27,7 +27,7 @@ const Home = () => {
                     <Typography variant="h2" sx={{ fontFamily: "cursive", fontWeight: "bold", color: "white", marginTop: "50px" }}>Explore Your Inner Self...</Typography>
                     <Typography variant="h3" sx={{ fontFamily: "cursive", fontWeight: "bold", color: "white", marginTop: "25px" }}>Welcome to Rainbow Reflections by Rita</Typography>
                     <Stack direction="row" spacing={4} mt={10} >
-                        <Button variant="contained" sx={{ px: '55px', borderRadius: "15px" }}>Book A Reading</Button>
+                        <Link to="/services" style={{ textDecoration: 'none' }}><Button variant="contained" sx={{ px: '55px', borderRadius: "15px" }}>Book A Reading</Button></Link>
                         <Link to="/shop" style={{ textDecoration: 'none' }}><Button variant="contained" sx={{ px: '55px', borderRadius: "15px" }}>Shop Now</Button></Link>
                     </Stack>
                 </Box>
