@@ -4,8 +4,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import NavDrawer from './NavDrawer';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
 
+    const { trackCartItems } = props;
     const [value, setValue] = useState();
     const [isLogged, setisLogged] = useState(false);
 
@@ -76,7 +77,7 @@ const Header = () => {
                                     </Link>
                                     <IconButton sx={{ marginLeft: '15px', color: "white" }}>
                                         <Link to="/cart">
-                                            <Badge badgeContent={0} color="primary">
+                                            <Badge badgeContent={trackCartItems} color="error">
                                                 <ShoppingCartIcon sx={{ color: 'white' }} />
                                             </Badge>
                                         </Link>

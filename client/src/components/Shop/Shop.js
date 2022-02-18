@@ -1,15 +1,8 @@
 import React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid } from '@mui/material';
-import useShopData from './useShopData';
 import { Link } from 'react-router-dom';
 
-const Shop = () => {
-
-    const [shopItems] = useShopData();
-
-    const addToCart = () => {
-
-    }
+const Shop = ({ shopItems, onAdd }) => {
 
     return (
         <>
@@ -45,8 +38,8 @@ const Shop = () => {
                                 <Button
                                     sx={{ marginLeft: 'auto', marginBottom: '15px', marginRight: '15px', height: '100%' }}
                                     variant="contained"
-                                    size="small "
-                                    onClick={addToCart}
+                                    size="small"
+                                    onClick={() => onAdd(item)}
                                 >Add to Cart</Button>
                             </CardActions>
                         </Card>

@@ -26,7 +26,7 @@ mongoose.connection.on('connected', () => {
 
 mongoose.connection.on('error', () => {
     console.log('Error connecting to MongoDB')
-})
+});
 
 app.use(cors());
 app.use(express.json());
