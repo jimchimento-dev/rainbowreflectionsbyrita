@@ -23,5 +23,4 @@ productRouter.get('/:id', (req, res, next) => {
         .catch(err => next(err));
 });
 
-
 module.exports = productRouter;

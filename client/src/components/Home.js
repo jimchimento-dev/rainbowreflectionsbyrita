@@ -34,7 +34,7 @@ const Home = () => {
             </Box>
             <Grid container className="row-content" sx={{ textAlign: 'center', marginTop: '40px' }}>
                 <Grid item sm={4}>
-                    <img src="/assets/images/Inspirational Gifts.jpeg" style={{ borderRadius: '50%' }} />
+                    <img src="/assets/images/Inspirational Gifts.jpeg" alt="Inspirational Gifts" style={{ borderRadius: '50%' }} />
                 </Grid>
                 <Grid item sm={4}>
                     <Typography variant="h3">Refresh yourself in a better way.</Typography>
@@ -53,12 +53,12 @@ const Home = () => {
                     <Typography variant="h5">Give your life balance with our exquisite selection of gemstones.</Typography>
                 </Grid>
                 <Grid item sm={4}>
-                    <img src="/assets/images/Gemstones and Crystals.jpeg" style={{ borderRadius: '50%' }} />
+                    <img src="/assets/images/Gemstones and Crystals.jpeg" alt="Gemstones and Crystals" style={{ borderRadius: '50%' }} />
                 </Grid>
             </Grid>
             <Grid container className="row-content" sx={{ textAlign: 'center', marginTop: '20px' }}>
                 <Grid item sm={4}>
-                    <img src="/assets/images/Mind Body Spirit.jpeg" style={{ borderRadius: '50%' }} />
+                    <img src="/assets/images/Mind Body Spirit.jpeg" alt="Mind Body Spirit" style={{ borderRadius: '50%' }} />
                 </Grid>
                 <Grid item sm={4}>
                     <Typography variant="h3">Life is beautiful, feel it.</Typography>

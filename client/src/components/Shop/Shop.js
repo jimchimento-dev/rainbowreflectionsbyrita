@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid } from '@mui/material';
-import { Link } from 'react-router-dom';
 
 const Shop = ({ shopItems, onAdd }) => {
 

@@ -49,7 +49,6 @@ const useForm = (submitForm) => {
             number: '',
             message: ''
         });
-
     }
 
     useEffect(() => {

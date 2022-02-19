@@ -10,6 +10,32 @@ const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const cors = require('cors');
 const config = require('config');
+const stripe = require('stripe')('stripeSecret');
+
+app.post('/checkout', async (req, res) => {
+    const { product } = req.body;
+    const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items: [
+            {
+                price_data: {
+                    currency: "usd",
+                    product_data: {
+                        name: product.name,
+                        images: [product.image]
+                    },
+                    unit_amount: product.amount * 100
+                },
+                quantity: product.quantity
+            }
+        ],
+        mode: "payment",
+        success_url: `$http://localhost:3000/cart`,
+        cancel_url: `$http://localhost:3000/cart`
+    })
+
+    res.json({ id: session.id })
+})
 
 const port = process.env.PORT || 5000;
 
