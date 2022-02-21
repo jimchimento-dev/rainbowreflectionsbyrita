@@ -24,3 +24,9 @@ ul {
 hr {
   width: 80vw;
 }
+
+@media (min-width: 900px)  {
+  .missionContainer {
+    padding-right: 200px;
+  }
+}

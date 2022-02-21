@@ -10,32 +10,42 @@ const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const cors = require('cors');
 const config = require('config');
-const stripe = require('stripe')('stripeSecret');
+const stripe = require('stripe')();
 
 app.post('/checkout', async (req, res) => {
-    const { product } = req.body;
     const session = await stripe.checkout.sessions.create({
+        billing_address_collection: 'auto',
+        shipping_address_collection: {
+            allowed_countries: ['US'],
+        },
         payment_method_types: ['card'],
         line_items: [
             {
-                price_data: {
-                    currency: "usd",
-                    product_data: {
-                        name: product.name,
-                        images: [product.image]
-                    },
-                    unit_amount: product.amount * 100
+                price: 'price_1KUyd0EfnOPhvCuxyt77I6nT',
+                adjustable_quantity: {
+                    enabled: true,
+                    minimum: 1,
+                    maximum: 5
                 },
-                quantity: product.quantity
+                quantity: 1,
+            },
+            {
+                price: 'price_1KUyaUEfnOPhvCuxZIXlPior',
+                adjustable_quantity: {
+                    enabled: true,
+                    minimum: 1,
+                    maximum: 5
+                },
+                quantity: 1,
             }
         ],
         mode: "payment",
-        success_url: `$http://localhost:3000/cart`,
-        cancel_url: `$http://localhost:3000/cart`
-    })
-
+        automatic_tax: { enabled: true },
+        success_url: `http://localhost:3000`,
+        cancel_url: `http://localhost:3000/cart`
+    });
     res.json({ id: session.id })
-})
+});
 
 const port = process.env.PORT || 5000;
 

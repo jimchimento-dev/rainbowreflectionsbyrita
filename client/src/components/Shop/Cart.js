@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Grid, Button, Card, CardMedia, CardContent, CardActions } from '@mui/material';
-import StripeCheckout from 'react-stripe-checkout';
+import { loadStripe } from '@stripe/stripe-js' // creates a stripe object once it finishes loading.
 import axios from 'axios';
 
 const Cart = ({ cartItems, onAdd, onRemove }) => {
@@ -8,6 +8,36 @@ const Cart = ({ cartItems, onAdd, onRemove }) => {
     const itemsPrice = cartItems.reduce((a, c) => a + c.cost * c.qty, 0);
     const taxPrice = itemsPrice * 0.06625;
     const totalPrice = itemsPrice + taxPrice;
+
+
+    let stripePromise;
+
+    const getStripe = () => {
+        if (!stripePromise) {
+            stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
+        }
+        return stripePromise;
+    }
+
+    const item = {
+        price: cartItems.map(item => item.cost),
+        quantity: 1
+    }
+
+    const checkoutOptions = {
+        lineItems: [item],
+        mode: "payment",
+        successUrl: `${window.location.origin}/success`,
+        cancelUrl: `${window.location.origin}/cancel`
+    }
+
+    const redirectToCheckout = async () => {
+        console.log("redirectToCheckout")
+
+        const stripe = await getStripe()
+        const { error } = await stripe.redirectToCheckout(checkoutOptions);
+        console.log("Stripe checkout error", error)
+    }
 
     const makePayment = token => {
         const body = {
@@ -52,16 +82,7 @@ const Cart = ({ cartItems, onAdd, onRemove }) => {
                                         <Typography variant="h6" sx={{ fontWeight: "600" }}>Total - ${totalPrice.toFixed(2)}</Typography>
                                     </CardContent>
                                     <CardActions sx={{ marginTop: 'auto', display: "flex", justifyContent: "center" }}>
-                                        <StripeCheckout
-                                            stripeKey=""
-                                            token={makePayment}
-                                            name="Checkout"
-                                            amount={totalPrice * 100}
-                                            shippingAddress
-                                            billingAddress
-                                        >
-                                            <Button variant="contained" size="large" fullWidth>Checkout</Button>
-                                        </StripeCheckout>
+                                        <Button variant="contained" size="large" fullWidth onClick={redirectToCheckout}>Checkout</Button>
                                     </CardActions>
                                 </>
                             )

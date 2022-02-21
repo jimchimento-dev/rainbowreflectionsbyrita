@@ -13,6 +13,7 @@ import Register from './components/Login/Register';
 import Cart from './components/Shop/Cart';
 import CssBaseline from '@mui/material/CssBaseline';
 import useShopData from './components/Shop/useShopData';
+import "@stripe/stripe-js";
 import './App.css';
 
 function App() {
