@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 0;
 }
 
 .row-content {
@@ -28,5 +29,11 @@ hr {
 @media (min-width: 900px)  {
   .missionContainer {
     padding-right: 200px;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 1066px) {
+  .hideText {
+    visibility: hidden;
   }
 }
