@@ -63,7 +63,7 @@ const Cart = ({ cartItems, onAdd, onRemove }) => {
         <>
             <Grid container>
                 <Grid item xs={12}>
-                    <Typography variant="h4" ml={25} mt={5}>Cart</Typography>
+                    <Typography variant="h4" mt={5} sx={{ display: "flex", justifyContent: "center" }}>Cart</Typography>
                     <hr />
                 </Grid>
                 <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>

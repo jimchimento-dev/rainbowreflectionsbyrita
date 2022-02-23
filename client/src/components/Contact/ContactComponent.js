@@ -17,7 +17,7 @@ const Contact = () => {
         <>
             <Grid container>
                 <Grid item xs={12}>
-                    <Typography variant="h4" ml={25} mt={5}>Contact Us</Typography>
+                    <Typography variant="h4" mt={5} sx={{ display: "flex", justifyContent: "center" }}>Contact Us</Typography>
                     <hr />
                 </Grid>
             </Grid>
@@ -33,7 +33,7 @@ const Contact = () => {
             </Grid>
             <Grid container direction='row' justifyContent="center" mt={3}>
                 <Grid item>
-                    <Typography variant="h3">Send us your feedback, we'd love to hear from you!</Typography>
+                    <Typography variant="h3">Have a question? Send us a message below!</Typography>
 
                 </Grid>
             </Grid>``

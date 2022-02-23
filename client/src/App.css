@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .row-content {
@@ -23,7 +24,7 @@ ul {
 }
 
 hr {
-  width: 80vw;
+  width: 50vw;
 }
 
 @media (min-width: 900px)  {
@@ -35,5 +36,18 @@ hr {
 @media (min-width: 0px) and (max-width: 1066px) {
   .hideText {
     visibility: hidden;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .alignTop {
+    margin-top: -50px !important;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 756px) {
+  .displayNone {
+    display: none;
+    visibility: none;
   }
 }

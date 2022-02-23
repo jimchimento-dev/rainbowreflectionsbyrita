@@ -56,7 +56,7 @@ class Events extends Component {
         return (
             <Grid container>
                 <Grid item xs={12}>
-                    <Typography variant="h4" ml={25} mt={5}>Upcoming Events</Typography>
+                    <Typography variant="h4" mt={5} sx={{ display: "flex", justifyContent: "center" }}>Upcoming Events</Typography>
                     <hr />
                 </Grid>
                 {this.displayEvents(this.state.events)}

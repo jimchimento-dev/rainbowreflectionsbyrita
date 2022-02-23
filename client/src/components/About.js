@@ -9,18 +9,18 @@ const About = () => {
                 alignItems="center"
                 justify="center">
                 <Grid item xs={12}>
-                    <Typography variant="h4" ml={25} mt={5}>About Us</Typography>
+                    <Typography variant="h4" mt={5} sx={{ display: "flex", justifyContent: "center" }}>About Us</Typography>
                     <hr />
                 </Grid>
                 <Grid item mt={3} xs={12} md={6} display="flex" justifyContent="center">
-                    <img src="/assets/images/Universal Laws.jpg" alt="Universal Laws" style={{ height: "auto", width: "auto", maxWidth: "500px", maxHeight: "600px" }} />
+                    <img src="/assets/images/Universal Laws.jpg" alt="Universal Laws" style={{ height: "auto", width: "auto", maxWidth: "500px", maxHeight: "500px" }} />
                 </Grid>
                 <Grid item xs={12} md={6} className="missionContainer">
-                    <Typography variant="h3" align="center" mt={3} mb={3}><u>Our Mission</u></Typography>
-                    <Typography variant="h5">It is our belief that we are spiritual beings living in a physical body. It is our
+                    <Typography variant="h4" align="center" mt={3} mb={3}><u>Our Mission</u></Typography>
+                    <Typography variant="h6" align="center">It is our belief that we are spiritual beings living in a physical body. It is our
                     job to have this earthly experience to further our spiritual growth. We are
                     given 12 Universal Laws of Life to help guide us through this journey so that we can gain the spiritual wisdom and lessons we are here to achieve.</Typography>
-                    <Typography mt={4} variant="h5">At Rainbow Reflections by Rita, we hope to teach and empower our clients about the Universal Laws of life so they can live their life to their fullest potential.</Typography>
+                    <Typography mt={4} variant="h6" align="center">At Rainbow Reflections by Rita, we hope to teach and empower our clients about the Universal Laws of life so they can live their life to their fullest potential.</Typography>
 
                 </Grid>
                 <Grid item xs={12} mt={5} p={2} display="flex" justifyContent="center" align="center" >

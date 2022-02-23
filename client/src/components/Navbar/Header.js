@@ -40,7 +40,7 @@ const Header = (props) => {
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="fixed" sx={{ background: '#063970' }}>
+                <AppBar position="sticky" sx={{ background: '#063970' }}>
                     <Toolbar sx={{ margin: 0, padding: 0 }}>
                         <Link to="/">
                             <div className="logo">

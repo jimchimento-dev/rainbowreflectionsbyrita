@@ -55,45 +55,45 @@ const Home = () => {
                         top: 'unset'
                     }
                 }}
-                sx={{ height: '90vh' }}>
+                sx={{ height: '85vh' }} >
                 {
                     images.map((image, i, title) => <CarouselImages key={i} image={image} title={title} />)
                 }
             </Carousel>
             <Grid container className="row-content" direction="row" alignItems="center" justify="center">
                 <Grid item xs={12} sm={4} align="center">
-                    <img src="/assets/images/Inspirational Gifts.jpeg" alt="Inspirational Gifts" style={{ borderRadius: '50%' }} />
+                    <img src="/assets/images/Inspirational Gifts.jpeg" alt="Inspirational Gifts" style={{ borderRadius: '50%', height: 300 }} />
                 </Grid>
                 <Grid item sm={4} className="hideText" align="center">
-                    <Typography variant="h3">Refresh yourself in a better way.</Typography>
-                    <Typography variant="h5" mt={4}>Surround yourself with positivity, view our uplifting gift items today!</Typography>
+                    <Typography variant="h4">Refresh yourself in a better way.</Typography>
+                    <Typography variant="h6" mt={1}>Surround yourself with positivity, view our uplifting gift items today!</Typography>
                 </Grid>
                 <Grid item xs={12} sm={4} align="center">
-                    <Typography variant="h2" className="alignTop">Inspirational Gifts</Typography>
+                    <Typography variant="h3" className="alignTop">Inspirational Gifts</Typography>
                 </Grid >
             </Grid>
             <Grid container className="row-content" direction="row" alignItems="center" justify="center">
                 <Grid item xs={12} sm={4} align="center">
-                    <Typography variant="h2" className="alignBottom">Gemstones &amp; Crystals</Typography>
+                    <Typography variant="h3" className="alignBottom">Gemstones &amp; Crystals</Typography>
                 </Grid >
                 <Grid item sm={4} className="hideText" align="center">
-                    <Typography variant="h3">Enlighten your life.</Typography>
-                    <Typography variant="h5" mt={4}>Give your life balance with our exquisite selection of gemstones.</Typography>
+                    <Typography variant="h4">Enlighten your life.</Typography>
+                    <Typography variant="h6" mt={1}>Give your life balance with our exquisite selection of gemstones.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={4} align="center">
-                    <img src="/assets/images/Gemstones and Crystals.jpeg" alt="Gemstones and Crystals" style={{ borderRadius: '50%' }} />
+                    <img src="/assets/images/Gemstones and Crystals.jpeg" alt="Gemstones and Crystals" style={{ borderRadius: '50%', height: 300 }} />
                 </Grid>
             </Grid>
             <Grid container className="row-content" direction="row" alignItems="center" justify="center">
                 <Grid item xs={12} sm={4} align="center">
-                    <img src="/assets/images/Mind Body Spirit.jpeg" alt="Mind Body Spirit" style={{ borderRadius: '50%' }} />
+                    <img src="/assets/images/Mind Body Spirit.jpeg" alt="Mind Body Spirit" style={{ borderRadius: '50%', height: 300 }} />
                 </Grid>
                 <Grid item sm={4} className="hideText" align="center">
-                    <Typography variant="h3">Life is beautiful, feel it.</Typography>
-                    <Typography variant="h5" mt={4}>Create a better understanding with yourself.</Typography>
+                    <Typography variant="h4">Life is beautiful, feel it.</Typography>
+                    <Typography variant="h6" mt={1}>Create a better understanding with yourself.</Typography>
                 </Grid>
                 <Grid item xs={12} sm={4} align="center">
-                    <Typography variant="h2" className="alignTop">Mind, Body &amp; Spirit</Typography>
+                    <Typography variant="h3" className="alignTop">Mind, Body &amp; Spirit</Typography>
                 </Grid >
             </Grid>
         </>
