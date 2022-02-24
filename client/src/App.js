@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact/ContactComponent';
-import Events from './components/Events';
+import Events from './components/Events/Events';
 import Services from './components/Services';
 import Shop from './components/Shop/Shop';
 import Login from './components/Login/Login';
@@ -13,11 +13,13 @@ import Register from './components/Login/Register';
 import Cart from './components/Shop/Cart';
 import CssBaseline from '@mui/material/CssBaseline';
 import useShopData from './components/Shop/useShopData';
+import useEventsData from './components/Events/useEventsData';
 import "@stripe/stripe-js";
 import './App.css';
 
 function App() {
 
+  const [events] = useEventsData();
   const [shopItems] = useShopData();
   const [cartItems, setCartItems] = useState([]);
 
@@ -53,7 +55,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/events" element={<Events />} />
+          <Route path="/events" element={<Events events={events} />} />
           <Route path="/services" element={<Services />} />
           <Route path="/shop" element={<Shop onAdd={onAdd} shopItems={shopItems} />} />
           <Route path="/login" element={<Login />} />
