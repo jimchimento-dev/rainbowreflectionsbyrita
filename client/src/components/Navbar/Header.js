@@ -44,7 +44,7 @@ const Header = (props) => {
                     <Toolbar sx={{ margin: 0, padding: 0 }}>
                         <Link to="/">
                             <div className="logo">
-                                <img src="/assets/images/main-image-1 (1).png" alt="Home Logo" width="400" height="auto" onClick={() => imageHomeIndicator()} />
+                                <img src="/assets/images/Butterfly_nav_image-removebg-preview (1).png" alt="Home Logo" width="65" height="65" onClick={() => imageHomeIndicator()} />
                             </div>
                         </Link>
                         {
